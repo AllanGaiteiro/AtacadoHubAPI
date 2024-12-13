@@ -19,8 +19,8 @@ Para personalizar este template, siga os passos abaixo:
 
 ### Alterar o nome do projeto
 
-1. Substitua todas as ocorrências de `nest-template` pelo nome desejado para o projeto (por exemplo, `nome-do-projeto`).
-2. Substitua todas as ocorrências de `NestTemplateApi` pelo formato PascalCase do novo nome (por exemplo, `NomeDoProjeto`).
+1. Substitua todas as ocorrências de `atacado-hub` pelo nome desejado para o projeto (por exemplo, `nome-do-projeto`).
+2. Substitua todas as ocorrências de `AtacadoHubApi` pelo formato PascalCase do novo nome (por exemplo, `NomeDoProjeto`).
 
 #### No projeto
 
@@ -37,7 +37,7 @@ Para personalizar este template, siga os passos abaixo:
   - Renomeie arquivos, se necessário, para refletir o novo nome do projeto.
 
 - **Módulos e Classes**:
-  - Substitua `NestTemplateApi` por `NomeDoProjeto` em todos os arquivos TypeScript.
+  - Substitua `AtacadoHubApi` por `NomeDoProjeto` em todos os arquivos TypeScript.
 
 ```typescript
 @Module({
@@ -69,8 +69,8 @@ services:
 Use um comando de busca e substituição para alterar o nome globalmente:
 
 ```bash
-grep -rl 'nest-template-api' ./ | xargs sed -i 's/nest-template-api/nome-do-projeto/g'
-grep -rl 'NestTemplateApi' ./ | xargs sed -i 's/NestTemplateApi/NomeDoProjeto/g'
+grep -rl 'atacado-hub-api' ./ | xargs sed -i 's/atacado-hub-api/nome-do-projeto/g'
+grep -rl 'AtacadoHubApi' ./ | xargs sed -i 's/AtacadoHubApi/NomeDoProjeto/g'
 ```
 
 ---
@@ -80,8 +80,8 @@ grep -rl 'NestTemplateApi' ./ | xargs sed -i 's/NestTemplateApi/NomeDoProjeto/g'
 Clone este repositório e instale as dependências:
 
 ```bash
-$ git clone https://github.com/seu-usuario/nest-template-api.git
-$ cd nest-template-api
+$ git clone https://github.com/seu-usuario/atacado-hub-api.git
+$ cd atacado-hub-api
 $ docker compose up --build
 ```
 
@@ -104,13 +104,13 @@ docker compose -f docker-compose.test.yml up
 #### Execute a aplicação em modo de DESENVOLVIMENTO:
 
 ```bash
-$ docker exec -it nest-template-api sh
+$ docker exec -it atacado-hub-api sh
 ```
 
 #### Execute a aplicação em modo de TESTES:
 
 ```bash
-$ docker exec -it nest-template-test-api s
+$ docker exec -it atacado-hub-test-api s
 ```
 
 Acesse a API no navegador em: [http://localhost:3000](http://localhost:3000)

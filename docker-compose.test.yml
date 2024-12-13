@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   test-app:
-    container_name: nest-template-test-api
+    container_name: atacado-hub-test-api
     build:
       context: .
       dockerfile: Dockerfile
@@ -23,25 +23,25 @@ services:
       npm run test:cov
       "
     networks:
-      - nest-template-network
+      - atacado-hub-network
 
   test-db:
     image: postgres:14-alpine
-    container_name: nest-template-test-db
+    container_name: atacado-hub-test-db
     ports:
       - "5433:5432" # Porta local diferente para não conflitar com o ambiente normal
     environment:
       POSTGRES_USER: test_user
       POSTGRES_PASSWORD: test_password
-      POSTGRES_DB: nest-template
+      POSTGRES_DB: atacado-hub
     volumes:
       - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
     networks:
-      - nest-template-network
+      - atacado-hub-network
    
 volumes:
   postgres-test-data:
   
 networks:
-  nest-template-network:
+  atacado-hub-network:
     driver: bridge
