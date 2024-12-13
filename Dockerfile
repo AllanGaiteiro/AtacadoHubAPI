@@ -1,6 +1,12 @@
 # Usar a imagem base do Node.js
 FROM node:18-alpine
 
+RUN apk update && apk add --no-cache curl
+
+# Baixar o wait-for-it com curl
+RUN curl -sSL https://github.com/vishnubob/wait-for-it/releases/download/v2.3.0/wait-for-it-linux-amd64 -o /usr/local/bin/wait-for-it && \
+    chmod +x /usr/local/bin/wait-for-it
+    
 # Configurar diretório de trabalho
 WORKDIR /app
 
@@ -12,4 +18,4 @@ RUN npm install --save-dev ts-node
 EXPOSE 3000
 
 # Definir comando padrão
-CMD ["sh", "-c", "npx typeorm migration:run && npm run start:dev"]
+CMD ["wait-for-it", "db:5432", "--", "npm", "run", "start"]
